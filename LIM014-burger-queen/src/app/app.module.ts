@@ -16,7 +16,7 @@ import {DataService} from './data.service';
 import { AboutComponent } from './about/about.component'
 
 const routes:Route[] = [
-  {path: ' ', component: HolaMundoComponent},
+  {path: '', component: HolaMundoComponent},
   {path: 'about', component: AboutComponent}
 ];
 
