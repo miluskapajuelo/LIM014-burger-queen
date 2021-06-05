@@ -4,39 +4,35 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 //lo agregamos para conectarnos con una página exterior y traernos los datos
 import { HttpClientModule} from '@angular/common/http'
-//lo agregamos para crear las navegaciones de vistas sin refrescar la página
-import {RouterModule, Route} from '@angular/router'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HolaMundoComponent } from './hola-mundo/hola-mundo.component';
-import { UserComponent } from './user/user.component';
+import { ItemsComponent } from './items/items.component';
 
 import {DataService} from './data.service';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { HeaderComponent } from './header/header.component';
+import { ItemComponent } from './item/item.component'
 
-const routes:Route[] = [
-  {path: '', component: HolaMundoComponent},
-  {path: 'about', component: AboutComponent}
-];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HolaMundoComponent,
-    UserComponent,
-    AboutComponent
+    ItemsComponent,
+    AboutComponent,
+    HeaderComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports:[
-    RouterModule
-  ],
+      ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
