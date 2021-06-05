@@ -1,6 +1,10 @@
-<div>
-  <div *ngFor="let item of items">
-    {{item.title}}
+<section class="order">
+  <div>
+    <app-item
+    *ngFor="let item of items"
+    [item]="item">
+    (deleteItem)="deleteItem($event)" <!-- contiene la info que mandamos en emit -->
+  </app-item>
   </div>
-</div>
+</section>
 
