@@ -17,7 +17,8 @@ export class ItemsComponent implements OnInit {
   ngOnInit(): void {
     this.items = [{
       id: 0,
-      title: "manzana",
+      title: "drink",
+      type: 'drink',
       price: 10.5,
       quantity: 4,
       completed: false
@@ -25,6 +26,23 @@ export class ItemsComponent implements OnInit {
     {
       id: 1,
       title: "pan",
+      type: 'burger',
+      price: 10.5,
+      quantity: 4,
+      completed: true
+    },
+    {
+      id: 2,
+      title: "drink",
+      type: 'drink',
+      price: 10.5,
+      quantity: 4,
+      completed: true
+    },
+    {
+      id: 3,
+      title: "pan",
+      type: 'burger',
       price: 10.5,
       quantity: 4,
       completed: true
@@ -38,9 +56,14 @@ export class ItemsComponent implements OnInit {
     this.getTotal()
   }
 
+  onTypeItem(item:Item){
+    this.items = this.items.filter(x =>item.type === x.type )
+  }
+
   toggleItem(item:Item){
     this.getTotal()
   }
+
 
   getTotal(){
     this.total = this.items
