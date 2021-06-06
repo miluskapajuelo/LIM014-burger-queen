@@ -15,9 +15,10 @@ import {DataService} from './data.service';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { ItemComponent } from './item/item.component';
-import { ItemcitoComponent } from './itemcito/itemcito.component';
-import { ItemcitosComponent } from './itemcitos/itemcitos.component';
+import { ItemcitoComponent } from './componentAdi/itemcito/itemcito.component';
+import { ItemcitosComponent } from './componentAdi/itemcitos/itemcitos.component';
 import { TotalComponent } from './total/total.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 
 
@@ -33,6 +34,7 @@ import { TotalComponent } from './total/total.component';
     ItemcitoComponent,
     ItemcitosComponent,
     TotalComponent,
+    AddItemComponent,
   ],
   imports: [
     BrowserModule,

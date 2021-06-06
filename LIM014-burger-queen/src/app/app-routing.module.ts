@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 //lo agregamos para crear las navegaciones de vistas sin refrescar la página
 import {RouterModule, Route} from '@angular/router'
-import { AboutComponent } from './about/about.component'
-import { HolaMundoComponent } from './hola-mundo/hola-mundo.component';
+import { AddItemComponent } from './add-item/add-item.component';
+import {ItemsComponent} from './items/items.component';
 
 const routes:Route[] = [
-  {path: '', component: HolaMundoComponent},
-  {path: 'about', component: AboutComponent}
+  {
+    path: '',
+    component: ItemsComponent
+  },
+  {
+    path: 'Add',
+    component: AddItemComponent
+  }
 ];
 
 

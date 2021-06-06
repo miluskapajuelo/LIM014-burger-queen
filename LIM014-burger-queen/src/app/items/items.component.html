@@ -1,6 +1,6 @@
 <section class="order">
   <div>
-
+    <app-itemcitos></app-itemcitos>
     <app-item
     *ngFor="let item of items"
     [item]="item"
@@ -8,6 +8,7 @@
     (toggleItem)= "toggleItem($event)"
     (onTypeItem)="onTypeItem($event)">
      <!-- contiene la info que mandamos en emit -->
+
   </app-item>
   <app-total [total]= total mensaje="total por pagar: "></app-total>
   </div>

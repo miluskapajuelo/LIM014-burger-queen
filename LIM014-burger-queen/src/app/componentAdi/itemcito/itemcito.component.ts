@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Itemcito } from '../model/Itemcito';
+import { Itemcito } from '../../model/Itemcito';
 
 @Component({
   selector: 'app-itemcito',
