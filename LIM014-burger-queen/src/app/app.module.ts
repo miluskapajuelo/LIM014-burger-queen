@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { ItemComponent } from './item/item.component';
 import { ItemcitoComponent } from './itemcito/itemcito.component';
 import { ItemcitosComponent } from './itemcitos/itemcitos.component';
+import { TotalComponent } from './total/total.component';
 
 
 
@@ -31,6 +32,7 @@ import { ItemcitosComponent } from './itemcitos/itemcitos.component';
     ItemComponent,
     ItemcitoComponent,
     ItemcitosComponent,
+    TotalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,14 @@
 <section class="order">
   <div>
+
     <app-item
     *ngFor="let item of items"
     [item]="item"
-    (deleteItem)="deleteItem($event)">
+    (deleteItem)="deleteItem($event)"
+    (toggleItem)= "toggleItem($event)">
      <!-- contiene la info que mandamos en emit -->
   </app-item>
+  <app-total [total]= total mensaje="total por pagar: "></app-total>
   </div>
 </section>
 
