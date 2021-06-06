@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item} from '../model/item'
+import { ItemService } from '../services/item.service'
 
 
 @Component({
@@ -8,46 +9,17 @@ import { Item} from '../model/item'
   styleUrls: ['./items.component.sass']
 })
 export class ItemsComponent implements OnInit {
-  items: Item[] = []
+
   total: number = 0
+  items:Item[]=[]
 
 
-  constructor() { }
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
-    this.items = [{
-      id: 0,
-      title: "drink",
-      type: 'drink',
-      price: 10.5,
-      quantity: 4,
-      completed: false
-    },
-    {
-      id: 1,
-      title: "pan",
-      type: 'burger',
-      price: 10.5,
-      quantity: 4,
-      completed: true
-    },
-    {
-      id: 2,
-      title: "drink",
-      type: 'drink',
-      price: 10.5,
-      quantity: 4,
-      completed: true
-    },
-    {
-      id: 3,
-      title: "pan",
-      type: 'burger',
-      price: 10.5,
-      quantity: 4,
-      completed: true
-    }
-  ]
+  //this.items = this.itemService.getItems()
+  this.itemService.getItems().subscribe(data =>{
+    this.items = data;} )
   this.getTotal()
   }
 
