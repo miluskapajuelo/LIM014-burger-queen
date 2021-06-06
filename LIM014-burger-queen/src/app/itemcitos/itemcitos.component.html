@@ -1,0 +1,10 @@
+
+<p>itemcitos works!</p>
+
+<div class="ctalogos">
+<app-itemcito *ngFor="let itemcito of itemcitos"
+  [itemcito]="itemcito"
+  (deleteItemcito)="deleteItemcito($event)"
+  ></app-itemcito>
+</div>
+

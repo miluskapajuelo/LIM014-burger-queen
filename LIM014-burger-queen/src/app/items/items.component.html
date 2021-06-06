@@ -2,8 +2,9 @@
   <div>
     <app-item
     *ngFor="let item of items"
-    [item]="item">
-    (deleteItem)="deleteItem($event)" <!-- contiene la info que mandamos en emit -->
+    [item]="item"
+    (deleteItem)="deleteItem($event)">
+     <!-- contiene la info que mandamos en emit -->
   </app-item>
   </div>
 </section>

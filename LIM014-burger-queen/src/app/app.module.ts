@@ -14,7 +14,9 @@ import { ItemsComponent } from './items/items.component';
 import {DataService} from './data.service';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
-import { ItemComponent } from './item/item.component'
+import { ItemComponent } from './item/item.component';
+import { ItemcitoComponent } from './itemcito/itemcito.component';
+import { ItemcitosComponent } from './itemcitos/itemcitos.component'
 
 
 
@@ -25,7 +27,9 @@ import { ItemComponent } from './item/item.component'
     ItemsComponent,
     AboutComponent,
     HeaderComponent,
-    ItemComponent
+    ItemComponent,
+    ItemcitoComponent,
+    ItemcitosComponent
   ],
   imports: [
     BrowserModule,

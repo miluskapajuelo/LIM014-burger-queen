@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../model/item'
+import { Item} from '../model/item'
+
 
 @Component({
   selector: 'app-items',
@@ -8,6 +9,7 @@ import { Item } from '../model/item'
 })
 export class ItemsComponent implements OnInit {
   items: Item[] = []
+
 
   constructor() { }
 
@@ -30,7 +32,7 @@ export class ItemsComponent implements OnInit {
   }
 
   deleteItem(item:Item){
-    this.items = this.items.filter(x=>x.id !== item.id )
+    this.items = this.items.filter(x=>x.id !== item.id ) //filtro todos los que no se han seleccionado
   }
 
 }
