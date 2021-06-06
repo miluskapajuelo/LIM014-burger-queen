@@ -14,9 +14,7 @@ export class ItemcitosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.itemcitosCtalogo=[
-      "burger", "drink", "extra dish"
-    ]
+    this.itemcitosCtalogo=['burger','drink',"extra dish"]
 
     this.itemcitos = [{
       _id:  1,
@@ -48,5 +46,7 @@ export class ItemcitosComponent implements OnInit {
   deleteItemcito(itemcito:Itemcito){
     this.itemcitos = this.itemcitos.filter(x => x._id !== itemcito._id)
   }
+
+
 
 }

@@ -1,7 +1,11 @@
-<div>
-  <div class="catalogo">
+
+<section>
   <div>
-      {{itemcito.type}}
+    <div class="catalogo">
+    <div>
+        {{itemcito.type}}
+    </div>
+    <button (click)="onDelete(itemcito)">Por categoria {{itemcito.type}}</button>
   </div>
-  <button (click)="onDelete(itemcito)">Por categoria {{itemcito.type}}</button>
-</div>
+  </div>
+</section>

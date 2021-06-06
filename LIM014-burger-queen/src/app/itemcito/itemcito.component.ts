@@ -9,7 +9,9 @@ import { Itemcito } from '../model/Itemcito';
 export class ItemcitoComponent implements OnInit {
 
   @Input() itemcito:Itemcito = new Itemcito;
+  @Input() itemcitoCtalo = new Itemcito;
   @Output() deleteItemcito: EventEmitter<Itemcito> = new EventEmitter
+  @Output() showItemcito: EventEmitter<Itemcito> = new EventEmitter
 
 
   constructor() { }
@@ -17,6 +19,10 @@ export class ItemcitoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onShow(itemcitoCtalo:Itemcito){
+    this.showItemcito.emit(itemcitoCtalo)
+  }
   onDelete(itemcito:Itemcito){
     this.deleteItemcito.emit(itemcito)
   }
