@@ -29,6 +29,7 @@ export class AddItemComponent implements OnInit {
     item.completed=false;
 
     this.itemService.addItem(item);
+    //this.itemService.addItem(item).subscribe(i =>{this.router.navigate(['/'])   })
     //regrese a la pagina inicial
     this.router.navigate(['/'])
 

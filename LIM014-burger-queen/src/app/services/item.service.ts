@@ -2,13 +2,26 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Item } from '../model/item';
 import { HttpClient } from '@angular/common/http'
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
-  url:string = 'http://localhost:3200/products'
+
+  private domain: string;
+  private endpoint: string;
+  httpOptions = {
+    headers: {
+      'content-type': 'application/json'
+    }
+  }
+
+  constructor(private http: HttpClient) {
+    this.domain = environment.domain;
+    this.endpoint = '/products';
+  }
 
   items:Item[] = [{
     id: 0,
@@ -44,14 +57,22 @@ export class ItemService {
   }
 ];
 
-  constructor( private http: HttpClient) { }
+
 
   getItems():Observable<Item[]>{
-    return this.http.get<Item[]>(this.url)
+    return this.http.get<Item[]>(`${this.domain}${this.endpoint}`)
   }
 
-  addItem(item: Item){
-    this.items.unshift(item);
+  //Otros métodos HTTP
+  addItem(item: Item):Observable<Item>{
+    return this.http.post<Item>(`${this.domain}${this.endpoint}`, item, this.httpOptions)
+     //this.items.unshift(item);
+  }
+  toggleItem(item: Item):Observable<Item>{
+    return this.http.put<Item>(`${this.domain}${this.endpoint}${item.id}`, item, this.httpOptions)
+  }
+  deleteItem(item: Item):Observable<Item>{
+    return this.http.delete<Item>(`${this.domain}${this.endpoint}${item.id}`)
   }
 }
 
